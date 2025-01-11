@@ -1,0 +1,23 @@
+nohup: no se tendrá en cuenta la entrada
+Servidor corriendo en http://localhost:3001
+Conexión exitosa a la base de datos.
+Error al insertar evento: { Error: Cannot add or update a child row: a foreign key constraint fails (`efemerides_db`.`Eventos`, CONSTRAINT `Eventos_ibfk_1` FOREIGN KEY (`categoria_id`) REFERENCES `Categorias` (`id`) ON DELETE SET NULL)
+    at PromiseConnection.query (/home/rikihost/efemeride_proyecto/backend/node_modules/mysql2/lib/promise/connection.js:29:22)
+    at app.post (/home/rikihost/efemeride_proyecto/backend/server.js:70:45)
+    at Layer.handle [as handle_request] (/home/rikihost/efemeride_proyecto/backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/rikihost/efemeride_proyecto/backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/rikihost/efemeride_proyecto/backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/rikihost/efemeride_proyecto/backend/node_modules/express/lib/router/layer.js:95:5)
+    at /home/rikihost/efemeride_proyecto/backend/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/rikihost/efemeride_proyecto/backend/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/rikihost/efemeride_proyecto/backend/node_modules/express/lib/router/index.js:280:10)
+    at /home/rikihost/efemeride_proyecto/backend/node_modules/body-parser/lib/read.js:137:5
+  message:
+   'Cannot add or update a child row: a foreign key constraint fails (`efemerides_db`.`Eventos`, CONSTRAINT `Eventos_ibfk_1` FOREIGN KEY (`categoria_id`) REFERENCES `Categorias` (`id`) ON DELETE SET NULL)',
+  code: 'ER_NO_REFERENCED_ROW_2',
+  errno: 1452,
+  sql:
+   '\n            INSERT INTO Eventos (titulo, descripcion, fecha, categoria_id)\n            VALUES (\'Concierto de Año Nuevo\', \'Celebración musical para despedir el año\', \'2024-12-31\', 1)\n        ',
+  sqlState: '23000',
+  sqlMessage:
+   'Cannot add or update a child row: a foreign key constraint fails (`efemerides_db`.`Eventos`, CONSTRAINT `Eventos_ibfk_1` FOREIGN KEY (`categoria_id`) REFERENCES `Categorias` (`id`) ON DELETE SET NULL)' }
